@@ -3,9 +3,15 @@
 # cklinger@novareto.de
 
 from .interfaces import IMUBPrincipal
-from zope.security.interfaces import IPrincipal
-from zope.component import adapter
 from zope.interface import implementer
+
+try:
+    # we are using zope security
+    from zope.security.interfaces import IPrincipal
+    from zope.component import adapter
+except:
+    from crom import adapter
+    from cromlech.security import IPrincipal
 
 
 @implementer(IMUBPrincipal)

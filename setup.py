@@ -4,6 +4,16 @@ import os
 version = '1.0'
 
 
+crom_requires = [
+    'cromlech.security',
+    ]
+
+
+zope_requires = [
+    'zope.security',
+    ]
+
+
 setup(name='uvc.mub',
       version=version,
       description="",
@@ -28,6 +38,10 @@ setup(name='uvc.mub',
           'zope.component',
           'zope.security',
       ],
+      extras_require={
+          'crom': crom_requires,
+          'zope': zope_requires,
+          },
       entry_points="""
       # -*- Entry points: -*-
       """,
